@@ -4,6 +4,7 @@ import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import { Link } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -21,14 +22,15 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Trying out new Expo Router</ThemedText>
+        <ThemedText type="subtitle">
+          A mini game toolkit with dice rolls, number generators, timers, and
+          more!
+        </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Mini App to push EAS</ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Fidget Spinner</ThemedText>
-        <ThemedText>Tap the 'Spinner' tab to learn more start.</ThemedText>
+        <Link href="random_number">
+          <ThemedText type="subtitle">Random Number</ThemedText>
+        </Link>
       </ThemedView>
     </ParallaxScrollView>
   );

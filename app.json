@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Expo Playground",
-    "slug": "spinner-mthomps4",
+    "name": "Board Game Tools",
+    "slug": "board-game-tools",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/android-chrome-512x512.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -17,19 +17,17 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/android-chrome-512x512.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mthomps4.spinnermthomps4"
+      "package": "com.mthomps4.boardgametools"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.ico"
     },
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
     },
