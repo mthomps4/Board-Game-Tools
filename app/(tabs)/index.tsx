@@ -29,7 +29,9 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Link href="random_number">
-          <ThemedText type="subtitle">Random Number</ThemedText>
+          <ThemedText type="subtitle" style={styles.link}>
+            Random Number
+          </ThemedText>
         </Link>
       </ThemedView>
     </ParallaxScrollView>
@@ -45,6 +47,14 @@ const styles = StyleSheet.create({
   stepContainer: {
     gap: 8,
     marginBottom: 8,
+  },
+  link: {
+    gap: 8,
+    marginBottom: 8,
+    textDecorationColor: "blue",
+    textDecorationStyle: "solid",
+    textDecorationLine: "underline",
+    color: "navy",
   },
   reactLogo: {
     height: 178,
