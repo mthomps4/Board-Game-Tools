@@ -27,7 +27,9 @@
       "output": "static",
       "favicon": "./assets/images/favicon.ico"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "typedRoutes": true
     },
@@ -36,7 +38,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "d9097b80-05ec-4396-b0f2-32f9f3c5ec3b"
+        "projectId": "abf259c7-0bff-45eb-8943-ef4d2aeb8518"
       }
     },
     "owner": "mthomps4"
