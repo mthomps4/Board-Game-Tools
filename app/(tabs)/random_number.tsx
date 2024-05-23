@@ -1,19 +1,11 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import {
-  StyleSheet,
-  Animated,
-  Easing,
-  Pressable,
-  TextInput,
-  Text,
-  View,
-} from "react-native";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { StyleSheet, Animated, Easing, Pressable, TextInput, Text, View } from 'react-native';
 
-import { Collapsible } from "@/components/Collapsible";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { useRef, useState } from "react";
+import { Collapsible } from '@/components/Collapsible';
+import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
+import { useRef, useState } from 'react';
 
 export default function RandomNumberScreen() {
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
@@ -32,13 +24,13 @@ export default function RandomNumberScreen() {
         duration: 1000, // Duration of one spin
         useNativeDriver: true,
         easing: Easing.linear,
-      })
+      }),
     ).start();
   };
 
   const spin = rotateValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ["0deg", "1080deg"],
+    outputRange: ['0deg', '1080deg'],
   });
 
   const generateNumber = () => {
@@ -55,26 +47,24 @@ export default function RandomNumberScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: "white", dark: "white" }}
+      headerBackgroundColor={{ light: 'white', dark: 'white' }}
       headerImage={
         <ThemedView
           style={{
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            backgroundColor: "#EEE",
-          }}
-        >
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            backgroundColor: '#EEE',
+          }}>
           <Ionicons size={250} name="cube-outline" />
           <Ionicons size={200} name="cube-outline" />
           <Ionicons size={310} name="cube-outline" />
           <Ionicons size={100} name="cube-outline" />
           <Ionicons size={50} name="cube-outline" />
         </ThemedView>
-      }
-    >
+      }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Random Number Generator</ThemedText>
         <Collapsible title="Instructions">
@@ -89,32 +79,28 @@ export default function RandomNumberScreen() {
           style={styles.textInput}
           keyboardType="numeric"
           placeholder="100"
-          onChangeText={(text) =>
-            setMaxRange(text.length > 0 ? parseInt(text) : 0)
-          }
+          onChangeText={(text) => setMaxRange(text.length > 0 ? parseInt(text) : 0)}
           value={maxRange.toString()}
         />
       </ThemedView>
 
       <ThemedView style={styles.rollContainer}>
         <Pressable onPress={() => generateNumber()}>
-          <ThemedView style={{ backgroundColor: "inherit" }}>
+          <ThemedView style={{ backgroundColor: 'inherit' }}>
             <ThemedView
               style={{
-                display: "flex",
-                flexDirection: "row",
-                backgroundColor: "#CCC",
-              }}
-            >
+                display: 'flex',
+                flexDirection: 'row',
+                backgroundColor: '#CCC',
+              }}>
               <Animated.View
                 style={{
                   transform: [{ rotate: spin }],
-                }}
-              >
+                }}>
                 <Ionicons
                   size={100}
                   name="cube-outline"
-                  style={{ textAlign: "center", color: "black" }}
+                  style={{ textAlign: 'center', color: 'black' }}
                 />
               </Animated.View>
             </ThemedView>
@@ -123,9 +109,7 @@ export default function RandomNumberScreen() {
         </Pressable>
       </ThemedView>
       <View style={styles.numberContainer}>
-        <Text style={styles.number}>
-          {!isSpinning && spinCount > 0 ? randomNumber : "..."}
-        </Text>
+        <Text style={styles.number}>{!isSpinning && spinCount > 0 ? randomNumber : '...'}</Text>
       </View>
     </ParallaxScrollView>
   );
@@ -134,56 +118,56 @@ export default function RandomNumberScreen() {
 const styles = StyleSheet.create({
   titleContainer: {},
   rollContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     gap: 8,
     padding: 16,
     borderRadius: 8,
     borderWidth: 2,
-    borderColor: "black",
-    shadowColor: "black",
+    borderColor: 'black',
+    shadowColor: 'black',
     shadowOpacity: 0.5,
     shadowRadius: 4,
     elevation: 4,
-    backgroundColor: "#CCC",
+    backgroundColor: '#CCC',
     shadowOffset: { width: 4, height: 4 },
   },
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 8,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   textInput: {
     height: 40,
-    borderColor: "gray",
+    borderColor: 'gray',
     borderWidth: 2,
     width: 50,
     padding: 4,
   },
   roll: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 24,
-    textAlign: "center",
-    color: "black",
-    backgroundColor: "inherit",
+    textAlign: 'center',
+    color: 'black',
+    backgroundColor: 'inherit',
   },
   numberContainer: {
-    width: "100%",
+    width: '100%',
     height: 100,
     padding: 0,
     margin: 0,
-    backgroundColor: "navy",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: 'navy',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   number: {
     padding: 0,
     margin: 0,
-    color: "white",
+    color: 'white',
     fontSize: 48,
   },
 });
